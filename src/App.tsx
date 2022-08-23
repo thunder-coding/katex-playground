@@ -5,6 +5,9 @@ import download from "downloadjs";
 import * as htmlToImage from "html-to-image";
 import katex from "katex";
 
+import "./Footer.component"
+import Footer from "./Footer.component";
+
 function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
@@ -12,6 +15,7 @@ function App() {
   const [foregroundColor, setForegroundColor] = useState(localStorage.getItem('foreground') || '#000000');
   const [fontSize, setFontSize] = useState(localStorage.getItem('fontsize') || '24');
   return (
+    <>
     <div className="textarea-wrapper">
       <textarea
         value={input}
@@ -58,6 +62,8 @@ function App() {
         Download
       </button>
     </div>
+    <Footer/>
+    </>
   );
 }
 
