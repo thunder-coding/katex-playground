@@ -8,8 +8,8 @@ import katex from "katex";
 function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
-  const [foregroundColor, setForegroundColor] = useState('#000000');
+  const [backgroundColor, setBackgroundColor] = useState(localStorage.getItem('background') || '#ffffff');
+  const [foregroundColor, setForegroundColor] = useState(localStorage.getItem('foreground') || '#000000');
   const [fontSize, setFontSize] = useState('24');
   return (
     <div className="textarea-wrapper">
@@ -36,8 +36,8 @@ function App() {
         }}
       />
       <div id="output" style={{backgroundColor, color: foregroundColor, fontSize: fontSize + 'px'}} dangerouslySetInnerHTML={{ __html: output }}></div>
-      <input type="color" value={backgroundColor} name="background" onChange={(event)=>{setBackgroundColor(event.target.value)}} />
-      <input type="color" value={foregroundColor} name="foreground" onChange={(event)=>{setForegroundColor(event.target.value)}} />
+      <input type="color" value={backgroundColor} name="background" onChange={(event)=>{setBackgroundColor(event.target.value); localStorage.setItem('background', event.target.value);}} />
+      <input type="color" value={foregroundColor} name="foreground" onChange={(event)=>{setForegroundColor(event.target.value); localStorage.setItem('foreground', event.target.value);}} />
       <input type="range" value={fontSize} min="24" max="72" step="1" onChange={(event)=>{setFontSize(event.target.value)}} />
       <button
         onClick={() => {
