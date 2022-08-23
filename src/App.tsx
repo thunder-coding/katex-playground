@@ -8,8 +8,8 @@ import katex from "katex";
 function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [backgroundColor, setBackgroundColor] = useState('ffffff');
-  const [foregroundColor, setForegroundColor] = useState('000000');
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+  const [foregroundColor, setForegroundColor] = useState('#000000');
   const [fontSize, setFontSize] = useState('24');
 /*  setBackgroundColor('ffffff');
   setForegroundColor('000000'); */
