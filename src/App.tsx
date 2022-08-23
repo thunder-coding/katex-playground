@@ -11,8 +11,6 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
   const [foregroundColor, setForegroundColor] = useState('#000000');
   const [fontSize, setFontSize] = useState('24');
-/*  setBackgroundColor('ffffff');
-  setForegroundColor('000000'); */
   return (
     <div className="textarea-wrapper">
       <textarea
