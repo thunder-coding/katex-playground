@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Katex Playground
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project allows you to play with [Katex](https://katex.org/), whose aim is to provide a fast typesetting for the internet. It allows you to write math expressions, view a live view of the resultant Katex code, and export it as an image, so that it can be shared on the internet on platforms which do not support Latex/Katex/and the like.
 
-## Available Scripts
+This project originally started with the aim to fulfill my needs, but has been open sourced so that others can benefit from it as well.
 
-In the project directory, you can run:
+## Development
 
-### `yarn start`
+### Pre-requisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Make sure you have the following command-line tools available in your `$PATH`:
+- [NodeJS](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Getting started
 
-### `yarn test`
+Clone the Git repository:
+    
+```bash
+git clone https://github.com/thunder-coding/katex-playground.git
+gh repo clone thunder-coding/katex-playground       # Using GitHub CLI
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Install dependencies
 
-### `yarn build`
+```bash
+yarn
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Run the app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `yarn eject`
+Contributions of all kinds are welcome. Please open an issue or pull request if you find any bugs or have any suggestions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note that I won't be accepting any PRs modifying `yarn.lock` or `package.json` files as they might pose a security risk. Changes to `package.json` may be accepted if they don't change the dependencies of the app. If modifications to `yarn.lock` are inevitable, they'll be merged manually, whereby I'll be completely regenerate the `yarn.lock` file.
