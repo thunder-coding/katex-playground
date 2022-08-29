@@ -9,7 +9,7 @@ textarea {
   width: 100%;
   outline: #666 dotted 1px;
   box-sizing: border-box;
-  border:none;
+  border: none;
   resize: none;
 }
 

@@ -9,6 +9,7 @@ This project originally started with the aim to fulfill my needs, but has been o
 ### Pre-requisites
 
 Make sure you have the following command-line tools available in your `$PATH`:
+
 - [NodeJS](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
 - [Git](https://git-scm.com/)
@@ -16,7 +17,7 @@ Make sure you have the following command-line tools available in your `$PATH`:
 ### Getting started
 
 Clone the Git repository:
-    
+
 ```bash
 git clone https://github.com/thunder-coding/katex-playground.git
 gh repo clone thunder-coding/katex-playground       # Using GitHub CLI
