@@ -9,7 +9,22 @@ import "./Footer.component";
 import Footer from "./Footer.component";
 
 function App() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(
+    localStorage.getItem("katex-code") ||
+      `\\text{If } x_1 \\text{ and } x_2 \\text{ are the roots of the equation } f(x) = x^2 + 6x + 8,\\text{ such that } x_1 > x_2\\text{, then find the value of }{x_1}^{x_2}\\newline
+\\text{Solution:} \\newline
+f(x) = x^2 + 6x + 8 = 0\\newline
+\\Rightarrow x^2 + 4x + 2x + 8 = 0\\newline
+\\Rightarrow x(x + 4) + 2(x + 4)\\newline
+\\Rightarrow (x + 2)(x + 4) = 0 \\newline
+\\Rightarrow x = -2, -4\\newline
+\\Rightarrow x_1 = -2, x_2 = -4\\newline
+\\Rightarrow {x_1}^{x_2} \\newline
+\\Rightarrow {-2}^{-4} \\newline
+\\Rightarrow { 1 \\over {-2}^{4}} \\newline
+\\Rightarrow { 1 \\over (-2) \\times (-2) \\times (-2) \\times (-2)} \\newline
+\\Rightarrow { 1 \\over 16 } \\newline`
+  );
   const [output, setOutput] = useState("");
   const [backgroundColor, setBackgroundColor] = useState(
     localStorage.getItem("background") || "#ffffff"
@@ -42,6 +57,8 @@ function App() {
                   .replace(/</g, "&lt;")
                   .replace(/>/g, "&gt;")
               );
+            } finally {
+              localStorage.setItem("katex-code", event.target.value);
             }
           }}
         />
