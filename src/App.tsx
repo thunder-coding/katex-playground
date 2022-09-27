@@ -100,6 +100,9 @@ f(x) = x^2 + 6x + 8 = 0\\newline
             localStorage.setItem("fontsize", event.target.value);
           }}
         />
+        <details>
+          <summary>Advanced options</summary>
+        </details>
         <button
           onClick={() => {
             htmlToImage
@@ -109,7 +112,10 @@ f(x) = x^2 + 6x + 8 = 0\\newline
               .then((dataURL) => {
                 let img = new Image();
                 img.src = dataURL;
-                download(dataURL, "image.jpg");
+                download(
+                  dataURL,
+                  `Katex Math Preview - ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`
+                );
               })
               .catch((err) => {
                 alert("Unexpected error encountered, please report a bug.");
