@@ -35,6 +35,9 @@ f(x) = x^2 + 6x + 8 = 0\\newline
   const [fontSize, setFontSize] = useState(
     localStorage.getItem("fontsize") || "24"
   );
+  const [hideCredits, setCredits] = useState(
+    localStorage.getItem("creditsenabled") == "true" || false
+  );
   return (
     <>
       <div className="textarea-wrapper">
@@ -62,15 +65,31 @@ f(x) = x^2 + 6x + 8 = 0\\newline
             }
           }}
         />
-        <div
-          id="output"
-          style={{
-            backgroundColor,
-            color: foregroundColor,
-            fontSize: fontSize + "px",
-          }}
-          dangerouslySetInnerHTML={{ __html: output }}
-        ></div>
+        <div id="output">
+          <div
+            id="katex-output"
+            style={{
+              backgroundColor,
+              color: foregroundColor,
+              fontSize: fontSize + "px",
+            }}
+            dangerouslySetInnerHTML={{ __html: output }}
+          ></div>
+          {!hideCredits ? (
+            <p
+              style={{
+                backgroundColor: "#f5f5f58f",
+                textAlign: "center",
+                fontSize: Number(fontSize) / 2 + "px",
+              }}
+            >
+              Created using Katex Playground{" "}
+              <a href="https://katex-playground.codingthunder.me">
+                https://katex-playground.codingthunder.me
+              </a>
+            </p>
+          ) : null}
+        </div>
         <input
           type="color"
           value={backgroundColor}
@@ -102,6 +121,17 @@ f(x) = x^2 + 6x + 8 = 0\\newline
         />
         <details>
           <summary>Advanced options</summary>
+          <input
+            name="hide-credits"
+            type="checkbox"
+            checked={hideCredits}
+            onChange={(event) => {
+              let temp = event.target.checked ? "true" : "false";
+              setCredits(event.target.checked);
+              localStorage.setItem("creditsenabled", temp);
+            }}
+          />
+          <label htmlFor="hide-credits">Hide credits</label>
         </details>
         <button
           onClick={() => {
